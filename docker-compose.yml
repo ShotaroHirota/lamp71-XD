@@ -1,0 +1,30 @@
+version: '2'
+
+services:
+   db:
+     build: ./mysql
+     ports:
+      - '3306:3306'
+     volumes:
+       - ./db_data:/var/lib/mysql
+     environment:
+       MYSQL_ROOT_PASSWORD: root
+   php:
+    build: ./php
+    environment:
+        XDEBUG_CONFIG: remote_host=192.168.0.174
+    ports:
+      - '80:80'
+    restart: always
+    volumes:
+       - ./htdocs:/var/www/html
+    depends_on:
+      - db
+   phpmyadmin:
+     image: phpmyadmin/phpmyadmin:4.5.3.1-1
+     ports:
+       - "8080:8080"
+     depends_on:
+       - db
+volumes:
+    db_data:
