@@ -12,7 +12,7 @@ services:
    php:
     build: ./php
     environment:
-        XDEBUG_CONFIG: remote_host=192.168.0.174
+        XDEBUG_CONFIG: remote_host={The IP of the machine running your IDE}
     ports:
       - '80:80'
     restart: always
