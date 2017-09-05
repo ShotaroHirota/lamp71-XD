@@ -23,5 +23,4 @@ Port => "9000"
 #Refference
 * PhpStorm XDebug setting  
   https://gist.github.com/chadrien/c90927ec2d160ffea9c4
-  # lamp71-XD
-# lamp71-XD
+
